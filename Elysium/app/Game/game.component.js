@@ -16,13 +16,26 @@ var GameComponent = (function () {
         this.renderView();
     };
     GameComponent.prototype.renderView = function () {
-        var canvas = document.getElementById("canvas");
-        canvas.appendChild('<h1>aaa</h1>');
+        var container = document.getElementById('container');
+        var scene = new THREE.Scene();
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth - 100, window.innerHeight - 100);
+        // PerspectiveCamera( fov, aspect, near, far )
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 1000;
+        camera.position.x = 500;
+        camera.position.y = 500;
+        var cubegeometry = new THREE.BoxGeometry(30, 30, 30);
+        var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        var cube = new THREE.Mesh(cubegeometry, material);
+        scene.add(cube);
+        renderer.render(scene, camera);
+        container.appendChild(renderer.domElement);
     };
     GameComponent = __decorate([
         core_1.Component({
             selector: 'game',
-            template: '<div id="canvas"></div>'
+            template: '<div id="container"></div>'
         }), 
         __metadata('design:paramtypes', [])
     ], GameComponent);
