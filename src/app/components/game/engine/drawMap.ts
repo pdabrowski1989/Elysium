@@ -4,6 +4,7 @@ import loadTextures from './loadTextures';
 import textures from '../textures/textures';
 import map from '../map/map';
 
+
 let drawMap = (x:number, y:number) => {
     const canvas: any = document.getElementById("canvas");
     const ctx: any = canvas.getContext("2d");
