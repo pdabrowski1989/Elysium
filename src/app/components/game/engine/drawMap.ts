@@ -1,23 +1,33 @@
 'use strict';
 
-let draw = (x:number, y:number, map:number[][], ctx:any, i1:any, i2:any) => {
+import loadTextures from './loadTextures';
+import textures from '../textures/textures';
+import map from '../map/map';
+
+let drawMap = (x:number, y:number) => {
+    const canvas: any = document.getElementById("canvas");
+    const ctx: any = canvas.getContext("2d");
     let i: number, j: number;
 
-    console.log(x, y, map, ctx)
+       if(loadTextures()) {
+           for (i = 0; i < map.grounds.length; i++) {
+               for (j = 0; j < map.grounds[i].length; j++) {
 
-    for (i = 0; i < map.length; i++) {
-        for (j = 0; j < map[i].length; j++) {
-            if (map[i][j] === 0) {
-                ctx.drawImage(i1, x, y, 70, 70);
-            } else if (map[i][j] === 1) {
-                ctx.drawImage(i2, x, y, 70, 70);
-            }
+                   switch (map.grounds[i][j]) {
+                       case 0:
+                           ctx.drawImage(textures.grounds.grass.grass1_0, x, y, 70, 70);
+                           break;
+                       case 1:
+                           ctx.drawImage(textures.grounds.lava.lava1_0, x, y, 70, 70);
+                   }
 
-            x += 70;
-        }
-        x = 0;
-        y += 70
-    }
+                   x += 70;
+               }
+               x = 0;
+               y += 70
+           }
+       }
+
 };
 
-export default draw;
+export default drawMap;

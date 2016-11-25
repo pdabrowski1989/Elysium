@@ -1,6 +1,6 @@
 'use strict';
 
-let loadTextures = () => {
+let loadTextures = (): any => {
 
 };
 

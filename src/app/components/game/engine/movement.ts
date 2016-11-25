@@ -1,5 +1,5 @@
 'use strict';
-import draw from "./draw"
+import drawMap from "./drawMap"
 
 let movement = () => {
     const canvas: any = document.getElementById("canvas");
@@ -13,11 +13,11 @@ let movement = () => {
 
         switch (e.keyCode) {
             case 37:
-                x+=70;
+                x-=70;
                 console.log('left');
                 break;
             case 38:
-                x+=70;
+                y+=70;
                 console.log('up');
                 break;
             case 39:
@@ -25,7 +25,7 @@ let movement = () => {
                 console.log('right');
                 break;
             case 40:
-                x+=70;
+                y-=70;
                 console.log('down');
                 break;
         }
@@ -33,6 +33,7 @@ let movement = () => {
         console.log(x);
 
         ctx.translate(x, y);
+       // drawMap(x, y)
     });
 };
 
