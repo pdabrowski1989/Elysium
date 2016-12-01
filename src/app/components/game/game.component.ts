@@ -5,7 +5,7 @@ import drawMap from "./engine/drawMap";
 
 @Component({
     selector: "my-game",
-    template: "<canvas height='800' width='800' id='canvas'></canvas>"
+    template: "<canvas height='8800' width='8800' id='canvas'></canvas>"
 })
 
 export class GameComponent {
@@ -19,8 +19,6 @@ export class GameComponent {
         let y: number = 0;
 
         // ToDo: emit event on imageOnLoad = true;
-        setTimeout(() => {
-            drawMap(x, y)
-        }, 2000)
+        drawMap(x, y)
     }
 }
