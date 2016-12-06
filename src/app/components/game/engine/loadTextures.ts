@@ -4,26 +4,30 @@ import textures from '../textures/textures';
 let loadTextures = (): any => {
     let i: any, j: any, k: any;
 
-    for(i in textures) {
-        for(j in textures[i]) {
-            for(k in textures[i][j]) {
-                let img: any = new Image();
+    for (i in textures) {
+        for (j in textures[i]) {
+            for (k in textures[i][j]) {
+                let promise = new Promise((res, rej) => {
+                    let newImg: any = new Image();
 
-                img.src = textures[i][j][k].src;
-                img.onload = () => {
-                    textures[i][j][k].loaded = true;
-                };
+                    newImg.src = textures[i][j][k].src;
+                    newImg.onload = () => {
+                        textures[i][j][k].loaded = true;
+                    };
 
-                if(textures[i][j][k].loaded = true) {
-                    textures[i][j][k].img = img;
-                }
+                    if (textures[i][j][k].loaded = true) {
+                        textures[i][j][k].img = newImg;
+                    }
+
+                    res( textures[i][j][k].loaded)
+                })
+
+                promise.then(()=> {
+                   console.log('success')
+                })
             }
         }
     }
-
-    console.log(textures);
-
-    return true;
 };
 
 export default loadTextures;

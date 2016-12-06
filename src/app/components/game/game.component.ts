@@ -1,11 +1,15 @@
 import {Component} from '@angular/core';
+
 import './monsters/demon/demon.class';
 import movement from './engine/movement';
+import loadTextures from './engine/loadTextures';
 import drawMap from "./engine/drawMap";
+import drawHero from "./engine/drawHero";
+
 
 @Component({
     selector: "my-game",
-    template: "<canvas height='8800' width='8800' id='canvas'></canvas>"
+    template: "<canvas height='800' width='800' id='canvas'></canvas>"
 })
 
 export class GameComponent {
@@ -18,7 +22,7 @@ export class GameComponent {
         let x: number = 0;
         let y: number = 0;
 
-        // ToDo: emit event on imageOnLoad = true;
-        drawMap(x, y)
+        loadTextures()
+
     }
 }
