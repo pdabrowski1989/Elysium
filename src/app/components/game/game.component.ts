@@ -1,7 +1,11 @@
 import {Component} from '@angular/core';
+
 import './monsters/demon/demon.class';
 import movement from './engine/movement';
+import loadTextures from './engine/loadTextures';
 import drawMap from "./engine/drawMap";
+import drawHero from "./engine/drawHero";
+
 
 @Component({
     selector: "my-game",
@@ -15,13 +19,10 @@ export class GameComponent {
     }
 
     renderGrid() {
-        const canvas: any = document.getElementById("canvas");
-        const ctx: any = canvas.getContext("2d");
+        let x: number = 0;
+        let y: number = 0;
 
+        loadTextures()
 
-        // ToDo: emit event on imageOnLoad = true;
-        setTimeout(() => {
-            drawMap();
-        }, 3000)
     }
 }

@@ -1,21 +1,31 @@
 'use strict';
-
-import textures from '../textures/textures'
+import textures from '../textures/textures';
 
 let loadTextures = (): any => {
-    let i:number, j:number, a:any, b:any, c:any;
+    let i: any, j: any, k: any;
 
+    for (i in textures) {
+        for (j in textures[i]) {
+            for (k in textures[i][j]) {
+                let promise = new Promise((res, rej) => {
+                    let newImg: any = new Image();
 
-    for (a in textures) {
-        console.log(a)
+                    newImg.src = textures[i][j][k].src;
+                    newImg.onload = () => {
+                        textures[i][j][k].loaded = true;
+                    };
 
+                    if (textures[i][j][k].loaded = true) {
+                        textures[i][j][k].img = newImg;
+                    }
 
-        for (b in textures[a]) {
-            console.log(b)
+                    res( textures[i][j][k].loaded)
+                })
 
-           /* for(c in textures) {
-
-            }*/
+                promise.then(()=> {
+                   console.log('success')
+                })
+            }
         }
     }
 };
