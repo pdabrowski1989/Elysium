@@ -15,12 +15,13 @@ export class GameComponent {
     }
 
     renderGrid() {
-        let x: number = 0;
-        let y: number = 0;
+        const canvas: any = document.getElementById("canvas");
+        const ctx: any = canvas.getContext("2d");
+
 
         // ToDo: emit event on imageOnLoad = true;
         setTimeout(() => {
-            drawMap(x, y)
-        }, 2000)
+            drawMap();
+        }, 3000)
     }
 }

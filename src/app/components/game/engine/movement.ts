@@ -1,11 +1,16 @@
 'use strict';
-import drawMap from "./drawMap"
 
 let movement = () => {
     const canvas: any = document.getElementById("canvas");
     const ctx: any = canvas.getContext("2d");
     let x: number = 0;
     let y: number = 0;
+
+    const player = new Image();
+    player.src = "./src/app/components/game/textures/monsters/demons/demon.gif";
+    player.onload = () => {
+        ctx.drawImage(player, 70,70)
+    };
 
     ////
 
@@ -33,7 +38,6 @@ let movement = () => {
         console.log(x);
 
         ctx.translate(x, y);
-       // drawMap(x, y)
     });
 };
 
