@@ -21,7 +21,7 @@ let textures: any = {
     monsters: {
         demon: {
            demon1_0: {
-                src: "./src/app/components/game/textures/monsters/demon/demon.png",
+                src: "./src/app/components/game/textures/monsters/Hero/hero.png",
                 img: '',
                 loaded: false
             }

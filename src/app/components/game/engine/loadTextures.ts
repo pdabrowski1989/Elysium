@@ -23,7 +23,7 @@ let loadTextures = (): any => {
                 })
 
                 promise.then(()=> {
-                   console.log('success')
+                   console.log(textures)
                 })
             }
         }
