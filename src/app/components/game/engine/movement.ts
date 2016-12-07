@@ -1,4 +1,6 @@
 'use strict';
+import drawHero from './drawHero';
+import drawMap from './drawMap'
 
 let movement = () => {
     const canvas: any = document.getElementById("canvas");
@@ -6,32 +8,35 @@ let movement = () => {
     let x: number = 0;
     let y: number = 0;
 
+    console.log('tutaj')
+
     ////
 
     document.addEventListener("keydown", (e) => {
+        console.log(x, y)
 
         switch (e.keyCode) {
             case 37:
-                x-=70;
-                console.log('left');
+                x -= 80;
+                drawMap(0, 0)
+                drawHero(x, y);
                 break;
             case 38:
-                y+=70;
-                console.log('up');
+                y -= 80;
+                drawMap(0, 0)
+                drawHero(x, y);
                 break;
             case 39:
-                x+=70;
-                console.log('right');
+                x += 80;
+                drawMap(0, 0)
+                drawHero(x, y);
                 break;
             case 40:
-                y-=70;
-                console.log('down');
+                y += 80;
+                drawMap(0, 0)
+                drawHero(x, y);
                 break;
         }
-
-        console.log(x);
-
-        ctx.translate(x, y);
     });
 };
 

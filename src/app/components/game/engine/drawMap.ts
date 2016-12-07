@@ -1,5 +1,4 @@
 'use strict';
-
 import textures from '../textures/textures';
 import map from '../map/map';
 

@@ -26,6 +26,7 @@ export class GameComponent {
         loadTextures().then(() => {
            console.log(textures)
             drawMap(x, y)
+            drawHero()
         });
     }
 }
