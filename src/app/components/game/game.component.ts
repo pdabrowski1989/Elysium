@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 import './monsters/demon/demon.class';
 import movement from './engine/movement';
+import textures from './textures/textures';
 import loadTextures from './engine/loadTextures';
 import drawMap from "./engine/drawMap";
 import drawHero from "./engine/drawHero";
@@ -22,7 +23,9 @@ export class GameComponent {
         let x: number = 0;
         let y: number = 0;
 
-        loadTextures()
-
+        loadTextures().then(() => {
+           console.log(textures)
+            drawMap(x, y)
+        });
     }
 }

@@ -4,14 +4,14 @@ let textures: any = {
     grounds: {
         grass: {
             grass1_0: {
-                src: "./src/app/components/game/textures/grounds/grass/grass1_0.png",
+                src: "../src/app/components/game/textures/grounds/grass/grass1_0.png",
                 img: '',
                 loaded: false
             }
         },
         lava: {
             lava1_0: {
-                src: "./src/app/components/game/textures/grounds/lava/lava1_0.png",
+                src: "../src/app/components/game/textures/grounds/lava/lava1_0.png",
                 img: '',
                 loaded: false
             }
@@ -21,7 +21,7 @@ let textures: any = {
     monsters: {
         demon: {
            demon1_0: {
-                src: "./src/app/components/game/textures/monsters/Hero/hero.png",
+                src: "../src/app/components/game/textures/monsters/Hero/hero.png",
                 img: '',
                 loaded: false
             }
